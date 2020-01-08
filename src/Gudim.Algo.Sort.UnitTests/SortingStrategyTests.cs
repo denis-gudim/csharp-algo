@@ -15,7 +15,8 @@ namespace Gudim.Algo.Sort.UnitTests
 			_sortingStrategies = new ISortingStrategy[]
 			{
 				new BubbleSortingStrategy(),
-				new QuickSortingStrategy(new LomutoPartitionStrategy())
+				new LomutoQuickSortingStrategy(),
+				new HoareQuickSortingStrategy(), 
 			};
 		}
 
