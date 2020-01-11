@@ -18,6 +18,7 @@ namespace Gudim.Algo.Tests
 				new BubbleSortingStrategy(),
 				new LomutoQuickSortingStrategy(),
 				new HoareQuickSortingStrategy(), 
+				new InsertionSortingStrategy(), 
 			};
 		}
 

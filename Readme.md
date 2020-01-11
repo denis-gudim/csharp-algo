@@ -1,10 +1,10 @@
-# C# based algorithms examples
+# C# based algorithm examples
 
 Just another one repository with simple algorithms implementation based on C# programming language
 
-## Sorting
+## Sort
 
-### 1. Bubble sorting
+### 1. Bubble sort
 
 ```cs
 void Sort<T>(IList<T> collection, IComparer<T> comparer)
@@ -28,7 +28,7 @@ void Sort<T>(IList<T> collection, IComparer<T> comparer)
 }
 ```
 
-### 2.1. Quick sorting (Lomuto partition scheme)
+### 2.1. Quick sort (Lomuto partition scheme)
 
 ```cs
 void Sort<T>(IList<T> collection, IComparer<T> comparer, int low, int high)
@@ -65,7 +65,7 @@ int Partition<T>(IList<T> collection, IComparer<T> comparer, int low, int high)
 }
 ```
 
-### 2.2. Quick sorting (Hoare partition scheme)
+### 2.2. Quick sort (Hoare partition scheme)
 
 ```cs
 void Sort<T>(IList<T> collection, IComparer<T> comparer, int low, int high)
@@ -99,7 +99,30 @@ int Partition<T>(IList<T> collection, IComparer<T> comparer, int low, int high)
 }
 ```
 
-## Searching
+### 3. Insertion sort
+
+```cs
+void Sort<T>(IList<T> collection, IComparer<T> comparer)
+{
+	var size = collection.Count;
+
+	for (var i = 1; i < size; i++)
+	{
+		var j = i - 1;
+		var item = collection[i];
+
+		while (j >= 0 && comparer.Compare(collection[j], item) > 0)
+		{
+			collection[j + 1] = collection[j];
+			collection[j] = item;
+
+			j--;
+		}
+	}
+}
+```
+
+## Search
 
 ### 1. Linear search
 
