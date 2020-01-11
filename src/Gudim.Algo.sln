@@ -3,13 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gudim.Algo.Sort", "Gudim.Algo.Sort\Gudim.Algo.Sort.csproj", "{D74A17A4-683C-45B1-ABE9-119618815347}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gudim.Algo", "Gudim.Algo\Gudim.Algo.csproj", "{D74A17A4-683C-45B1-ABE9-119618815347}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3962ACCB-EE15-4697-A065-36226B9DE257}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gudim.Algo.Sort.UnitTests", "Gudim.Algo.Sort.UnitTests\Gudim.Algo.Sort.UnitTests.csproj", "{B39FBFE7-D13D-4749-9DCA-B18B9F84A69F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C4A2E299-178A-4289-9EF7-AE53BC15D5A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gudim.Algo.Tests", "Gudim.Algo.Tests\Gudim.Algo.Tests.csproj", "{B39FBFE7-D13D-4749-9DCA-B18B9F84A69F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,10 +24,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{D74A17A4-683C-45B1-ABE9-119618815347} = {C4A2E299-178A-4289-9EF7-AE53BC15D5A8}
-		{B39FBFE7-D13D-4749-9DCA-B18B9F84A69F} = {3962ACCB-EE15-4697-A065-36226B9DE257}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8B27AF9B-E0BD-491E-B5FD-7C8A1DD3F9C9}

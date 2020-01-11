@@ -4,6 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+    <AssemblyName>Gudim.Algo.Tests</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Gudim.Algo.Sort\Gudim.Algo.Sort.csproj" />
+    <ProjectReference Include="..\Gudim.Algo\Gudim.Algo.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,11 +1,12 @@
 using System;
 using System.Linq;
+using Gudim.Algo.Sort;
 using NUnit.Framework;
 
-namespace Gudim.Algo.Sort.UnitTests
+namespace Gudim.Algo.Tests
 {
 	[TestFixture]
-	public sealed class SortingStrategyTests
+	public sealed class SortingTests
 	{
 		private ISortingStrategy[] _sortingStrategies;
 
@@ -81,9 +82,9 @@ namespace Gudim.Algo.Sort.UnitTests
 				// Arrange
 				var rnd = new Random();
 				var testList = Enumerable.Range(0, size)
-					.Select(i => new SortingItem {Value = rnd.Next()})
+					.Select(i => new ExpressionComparableItem {Value = rnd.Next()})
 					.ToList();
-				var comparer = new ExpressionComparer<SortingItem, int>(item => item.Value);
+				var comparer = new ExpressionComparer<ExpressionComparableItem, int>(item => item.Value);
 				var referenceList = testList.OrderBy(item => item, comparer).ToList();
 
 				// Act

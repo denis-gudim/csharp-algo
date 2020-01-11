@@ -98,3 +98,43 @@ int Partition<T>(IList<T> collection, IComparer<T> comparer, int low, int high)
 	}
 }
 ```
+
+## Searching
+
+### 1. Linear search
+
+```cs
+int Find<T>(IList<T> sequence, T item, IComparer<T> comparer)
+{
+	var size = sequence.Count;
+
+	for (var i = 0; i < size; i++)
+	{
+		if (comparer.Compare(item, sequence[i]) == 0)
+			return i;
+	}
+
+	return -1;
+}
+```
+
+### 2. Binary search
+
+```cs
+int Find<T>(IList<T> sequence, T item, IComparer<T> comparer, int low, int high)
+{
+	if (low > high)
+		return -1;
+
+	var pivot = (low + high) / 2;
+	var result = comparer.Compare(item, sequence[pivot]);
+
+	if (result == 0)
+		return pivot;
+
+	if (result < 0)
+		return Find<T>(sequence, item, comparer, low, pivot - 1);
+
+	return Find<T>(sequence, item, comparer, pivot + 1, high);
+}
+```

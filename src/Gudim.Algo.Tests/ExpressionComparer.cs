@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Gudim.Algo.Sort.UnitTests
+namespace Gudim.Algo.Tests
 {
     public sealed class ExpressionComparer<T, K> : IComparer<T> where K : IComparable
     {
