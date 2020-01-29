@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using Gudim.Algo.Sort;
 using NUnit.Framework;
@@ -32,10 +31,7 @@ namespace Gudim.Algo.Tests
 			foreach (var strategy in _sortingStrategies)
 			{
 				// Arrange
-				var rnd = new Random();
-				var testList = Enumerable.Range(0, size)
-					.Select(i => rnd.Next())
-					.ToList();
+				var testList = TestUtils.GenerateRandomTestList(size);
 				var referenceList = testList.OrderBy(item => item).ToList();
 
 				// Act
@@ -56,10 +52,7 @@ namespace Gudim.Algo.Tests
 			foreach (var strategy in _sortingStrategies)
 			{
 				// Arrange
-				var rnd = new Random();
-				var testList = Enumerable.Range(0, size)
-					.Select(i => (int?) rnd.Next())
-					.ToList();
+				var testList = TestUtils.GenerateRandomTestList(size, i => (int?) i);
 				testList.Add(null);
 				var referenceList = testList.OrderBy(item => item).ToList();
 
@@ -81,10 +74,7 @@ namespace Gudim.Algo.Tests
 			foreach (var strategy in _sortingStrategies)
 			{
 				// Arrange
-				var rnd = new Random();
-				var testList = Enumerable.Range(0, size)
-					.Select(i => new ExpressionComparableItem {Value = rnd.Next()})
-					.ToList();
+				var testList = TestUtils.GenerateRandomTestList(size, i => new ExpressionComparableItem {Value = i});
 				var comparer = new ExpressionComparer<ExpressionComparableItem, int>(item => item.Value);
 				var referenceList = testList.OrderBy(item => item, comparer).ToList();
 

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Gudim.Algo.Search;
 using NUnit.Framework;
 
@@ -30,10 +29,8 @@ namespace Gudim.Algo.Tests
 			{
 				// Arrange
 				var rnd = new Random();
-				var	testList = Enumerable.Range(0, size)
-						.Select(i => rnd.Next())
-						.OrderBy(item => item)
-						.ToList();
+				var testList = TestUtils.GenerateRandomTestList(size);
+				testList.Sort();
 				var testItem = testList[size / 3];
 
 				// Act
